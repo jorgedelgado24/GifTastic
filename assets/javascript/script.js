@@ -57,7 +57,8 @@ $(document).ready(function () {
     $("#gif-buttons").on("click", ".b-created", function () {
 
         //Delete the previous gifs that were showing
-        $(".gifs-created").remove();
+        $(".gif").remove();
+        $(".rating").remove();
 
         //Get the text (or id in this case since it's named the same) of the button
         var buttonText = $(this).text();
@@ -86,21 +87,19 @@ $(document).ready(function () {
                 console.log(gifUrl);
 
                 //create div and append to "gifs" id in html
-                var gifDiv = $("<div>");
-                gifDiv.addClass("row col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 gifs-created");
-
+                
                 var rating = $("<p>").text("rating " + rating);
-                rating.addClass("row col-12");
+                rating.addClass("rating");
 
-                gifDiv.append(rating);
+                $("#gifs").append(rating);
+
 
                 var gif = $("<img>").attr("src", gifUrl);
-                gif.addClass("row col-12 gif")
+                gif.addClass("gif")
 
-                gifDiv.append(gif);
+                $("#gifs").append(gif);
 
-                $("#gifs").append(gifDiv);
-
+                
             }
 
 
