@@ -1,0 +1,120 @@
+a {
+    color: #777777;
+}
+
+.pageContent {
+    background-image: url(../images/circles-light.png);
+}
+
+#myName {
+    color: #ffffff;
+    background-color: #4aaaa5;
+    font-size: 28px;
+    border-color: #fff;
+}
+
+/*
+Start GIF Seacrh CSS
+*/
+
+
+#gifs {
+    margin: 60px 0px;
+}
+
+#search-gif-form {
+    margin-bottom: 20px;
+}
+#search-gif {
+    margin: 0px 0px 10px 0px;
+}
+
+#search-button {
+    margin: 0px 0px 20px 0px;
+}
+
+.buttons {
+    background-color: #ED7E2A;
+    border-color: #ED7E2A;
+    margin: 5px 5px;
+}
+
+form {
+    width: 100%;
+}
+
+/*
+Ends GIF Search CSS
+*/
+
+#navButtons {
+    text-align: end;
+}
+
+#aboutMe {
+    background-color: #fff;
+    color: #777777;
+    border-color: #fff;
+}
+
+#portfolio {
+    background-color: #fff;
+    color: #777777;
+    border-color: #fff;
+}
+
+#contact {
+    background-color: #fff;
+    color: #777777;
+    border-color: #fff;
+    padding: 3%;
+}
+
+#games {
+    background-image: url(images/Digital-gaming.jpg);
+    background-size: cover;
+    padding: 3%;
+    margin: 4% 1% 0% 0%;
+}
+
+#friends {
+    background-image: url(images/friends.jpg);
+    background-size: cover;
+    padding: 3%;
+    margin: 4% 1% 0% 0%;
+}
+
+#sports {
+    background-image: url(images/sports.jpg);
+    background-size: cover;
+    padding: 3%;
+    margin: 4% 1% 0% 0%;
+}
+
+#triathlon {
+    background-image: url(images/triathlon.jpg);
+    background-size: cover;
+    padding: 3%;
+    margin: 4% 1% 0% 0%;
+}
+
+#wedding {
+    background-image: url(images/wedding.jpg);
+    background-size: cover;
+    padding: 3%;
+    margin: 4% 1% 0% 0%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+#navMyName {
+    text-align: center;
+}
+
+#navButtons {
+    text-align: center;
+}
+
+}
