@@ -66,7 +66,7 @@ $(document).ready(function () {
 
         //Have your API key and query URL in variables
         var APIkey = "Y7tPU1SmBzLldu4qVGc6fmEJGmpVVMlK";
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + buttonText + "&api_key=" + APIkey + "&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonText + "&api_key=" + APIkey + "&limit=10";
 
         //do the ajax call for the specific sports person
         $.ajax({
@@ -86,24 +86,43 @@ $(document).ready(function () {
                 var gifUrl = response.data[i].images.original.url;
                 console.log(gifUrl);
 
+                var stillUrl = response.data[i].images.original_still.url;
+                console.log(stillUrl);
+
                 //create div and append to "gifs" id in html
-                
                 var rating = $("<p>").text("rating " + rating);
                 rating.addClass("rating");
 
                 $("#gifs").append(rating);
 
 
-                var gif = $("<img>").attr("src", gifUrl);
+                var gif = $("<img>");
+                gif.attr("src", stillUrl);
+                gif.attr("data-still", stillUrl);
+                gif.attr("data-animate", gifUrl);
+                gif.attr("data-state", "still");
                 gif.addClass("gif")
 
                 $("#gifs").append(gif);
-
-                
             }
-
-
         });
+    });
+
+    //When a gif is cliked it will change from still to animate and viceversa
+    $("#gifs").on("click", ".gif", function () {
+
+        //Get the state in which that gif is currently on
+        var state = $(this).attr("data-state");
+        console.log(state);
+
+        //IF function to change from data-still to data-animate and viceversa
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
 
     });
 });
